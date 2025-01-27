@@ -98,7 +98,9 @@
     <Compile Include="Modelo\Libro.vb" />
     <Compile Include="Modelo\Prestamo.vb" />
     <Compile Include="Modelo\Usuario.vb" />
-    <Compile Include="Vista\Form1.vb" />
+    <Compile Include="Vista\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Form1.Designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
@@ -107,6 +109,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -119,10 +122,22 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Settings.vb" />
+    <Compile Include="Vista\Ventana_InfoLibro.Designer.vb">
+      <DependentUpon>Ventana_InfoLibro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventana_InfoLibro.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\Ventana_Libros.Designer.vb">
       <DependentUpon>Ventana_Libros.vb</DependentUpon>
     </Compile>
     <Compile Include="Vista\Ventana_Libros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventana_NuevoLibro.Designer.vb">
+      <DependentUpon>Ventana_NuevoLibro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventana_NuevoLibro.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -136,8 +151,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventana_InfoLibro.resx">
+      <DependentUpon>Ventana_InfoLibro.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Ventana_Libros.resx">
       <DependentUpon>Ventana_Libros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventana_NuevoLibro.resx">
+      <DependentUpon>Ventana_NuevoLibro.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -34,42 +34,44 @@ Partial Class Form1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.PowderBlue
         Me.MenuStrip1.Font = New System.Drawing.Font("Miriam Libre", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(32, 32)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BibliotecaToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.PrestamosToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1194, 50)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(3, 1, 0, 1)
+        Me.MenuStrip1.Size = New System.Drawing.Size(384, 27)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'BibliotecaToolStripMenuItem
         '
         Me.BibliotecaToolStripMenuItem.Name = "BibliotecaToolStripMenuItem"
-        Me.BibliotecaToolStripMenuItem.Size = New System.Drawing.Size(196, 46)
+        Me.BibliotecaToolStripMenuItem.Size = New System.Drawing.Size(100, 25)
         Me.BibliotecaToolStripMenuItem.Text = "Biblioteca"
         '
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(172, 46)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(90, 25)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'PrestamosToolStripMenuItem
         '
         Me.PrestamosToolStripMenuItem.Name = "PrestamosToolStripMenuItem"
-        Me.PrestamosToolStripMenuItem.Size = New System.Drawing.Size(199, 46)
+        Me.PrestamosToolStripMenuItem.Size = New System.Drawing.Size(103, 25)
         Me.PrestamosToolStripMenuItem.Text = "Prestamos"
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1194, 866)
+        Me.ClientSize = New System.Drawing.Size(384, 361)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MinimumSize = New System.Drawing.Size(400, 400)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.MenuStrip1.ResumeLayout(False)
