@@ -35,7 +35,7 @@ Partial Class Ventana_InfoLibro
         '
         Me.tlpPrincipal.ColumnCount = 2
         Me.tlpPrincipal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.tlpPrincipal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.tlpPrincipal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlpPrincipal.Controls.Add(Me.lTitulo, 0, 0)
         Me.tlpPrincipal.Controls.Add(Me.lAutor, 0, 1)
         Me.tlpPrincipal.Controls.Add(Me.lAño, 1, 1)
@@ -47,7 +47,7 @@ Partial Class Ventana_InfoLibro
         Me.tlpPrincipal.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlpPrincipal.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlpPrincipal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlpPrincipal.Size = New System.Drawing.Size(355, 345)
+        Me.tlpPrincipal.Size = New System.Drawing.Size(715, 526)
         Me.tlpPrincipal.TabIndex = 0
         '
         'lTitulo
@@ -92,14 +92,13 @@ Partial Class Ventana_InfoLibro
         Me.tbSinopsis.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.tlpPrincipal.SetColumnSpan(Me.tbSinopsis, 2)
         Me.tbSinopsis.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tbSinopsis.Enabled = False
-        Me.tbSinopsis.Font = New System.Drawing.Font("Gabriola", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbSinopsis.Font = New System.Drawing.Font("Gabriola", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbSinopsis.Location = New System.Drawing.Point(20, 167)
         Me.tbSinopsis.Margin = New System.Windows.Forms.Padding(20)
         Me.tbSinopsis.Name = "tbSinopsis"
         Me.tbSinopsis.ReadOnly = True
         Me.tbSinopsis.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
-        Me.tbSinopsis.Size = New System.Drawing.Size(315, 158)
+        Me.tbSinopsis.Size = New System.Drawing.Size(675, 339)
         Me.tbSinopsis.TabIndex = 3
         Me.tbSinopsis.Text = resources.GetString("tbSinopsis.Text")
         '
@@ -108,7 +107,7 @@ Partial Class Ventana_InfoLibro
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Azure
-        Me.ClientSize = New System.Drawing.Size(355, 345)
+        Me.ClientSize = New System.Drawing.Size(715, 526)
         Me.Controls.Add(Me.tlpPrincipal)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Ventana_InfoLibro"

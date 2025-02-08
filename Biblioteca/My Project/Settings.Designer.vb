@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source= C:\Users\8FDAM12\source\repos\Proyecto_Biblioteca\Biblioteca\BDBibli"& _ 
-            "oteca.bd;version=3;")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source= C:\Users\jkand\Documents\GitHub\Proyecto_Biblioteca\Biblioteca\BDBib"& _ 
+            "lioteca.db;version=3;")>  _
         Public ReadOnly Property conexion() As String
             Get
                 Return CType(Me("conexion"),String)

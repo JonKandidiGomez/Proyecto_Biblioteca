@@ -50,3 +50,8 @@ C:\Users\jkand\Documents\GitHub\Proyecto_Biblioteca\Biblioteca\obj\Debug\Bibliot
 C:\Users\jkand\Documents\GitHub\Proyecto_Biblioteca\Biblioteca\obj\Debug\Biblioteca.pdb
 C:\Users\jkand\Documents\GitHub\Proyecto_Biblioteca\Biblioteca\obj\Debug\Biblioteca.Ventana_InfoLibro.resources
 C:\Users\jkand\Documents\GitHub\Proyecto_Biblioteca\Biblioteca\obj\Debug\Biblioteca.Ventana_NuevoLibro.resources
+C:\Users\jkand\Documents\GitHub\Proyecto_Biblioteca\Biblioteca\obj\Debug\Biblioteca.Ventana_Prestamos.resources
+C:\Users\jkand\Documents\GitHub\Proyecto_Biblioteca\Biblioteca\obj\Debug\Biblioteca.Ventana_Usuarios.resources
+C:\Users\jkand\Documents\GitHub\Proyecto_Biblioteca\Biblioteca\bin\Debug\ControlUsuario.dll
+C:\Users\jkand\Documents\GitHub\Proyecto_Biblioteca\Biblioteca\bin\Debug\ControlUsuario.pdb
+C:\Users\jkand\Documents\GitHub\Proyecto_Biblioteca\Biblioteca\bin\Debug\ControlUsuario.xml

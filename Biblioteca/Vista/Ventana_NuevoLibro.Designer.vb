@@ -23,8 +23,6 @@ Partial Class Ventana_NuevoLibro
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.tlpPrincipal = New System.Windows.Forms.TableLayoutPanel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.tlpDatos = New System.Windows.Forms.TableLayoutPanel()
         Me.tbTitulo = New System.Windows.Forms.TextBox()
         Me.lTitulo = New System.Windows.Forms.Label()
@@ -34,6 +32,8 @@ Partial Class Ventana_NuevoLibro
         Me.lAño = New System.Windows.Forms.Label()
         Me.tbAño = New System.Windows.Forms.TextBox()
         Me.tbSinopsis = New System.Windows.Forms.RichTextBox()
+        Me.bGuardar = New System.Windows.Forms.Button()
+        Me.bLimpiar = New System.Windows.Forms.Button()
         Me.tlpPrincipal.SuspendLayout()
         Me.tlpDatos.SuspendLayout()
         Me.SuspendLayout()
@@ -45,8 +45,8 @@ Partial Class Ventana_NuevoLibro
         Me.tlpPrincipal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.tlpPrincipal.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.tlpPrincipal.Controls.Add(Me.tlpDatos, 0, 0)
-        Me.tlpPrincipal.Controls.Add(Me.Button1, 2, 1)
-        Me.tlpPrincipal.Controls.Add(Me.Button2, 1, 1)
+        Me.tlpPrincipal.Controls.Add(Me.bGuardar, 2, 1)
+        Me.tlpPrincipal.Controls.Add(Me.bLimpiar, 1, 1)
         Me.tlpPrincipal.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpPrincipal.Location = New System.Drawing.Point(0, 0)
         Me.tlpPrincipal.Name = "tlpPrincipal"
@@ -54,32 +54,8 @@ Partial Class Ventana_NuevoLibro
         Me.tlpPrincipal.RowCount = 2
         Me.tlpPrincipal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlpPrincipal.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tlpPrincipal.Size = New System.Drawing.Size(502, 450)
+        Me.tlpPrincipal.Size = New System.Drawing.Size(349, 261)
         Me.tlpPrincipal.TabIndex = 1
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.PowderBlue
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button1.Font = New System.Drawing.Font("Miriam Libre", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(414, 414)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.PowderBlue
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Button2.Font = New System.Drawing.Font("Miriam Libre", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(333, 414)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'tlpDatos
         '
@@ -107,7 +83,7 @@ Partial Class Ventana_NuevoLibro
         Me.tlpDatos.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlpDatos.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlpDatos.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlpDatos.Size = New System.Drawing.Size(476, 395)
+        Me.tlpDatos.Size = New System.Drawing.Size(323, 203)
         Me.tlpDatos.TabIndex = 3
         '
         'tbTitulo
@@ -118,7 +94,7 @@ Partial Class Ventana_NuevoLibro
         Me.tbTitulo.Location = New System.Drawing.Point(92, 3)
         Me.tbTitulo.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
         Me.tbTitulo.Name = "tbTitulo"
-        Me.tbTitulo.Size = New System.Drawing.Size(361, 23)
+        Me.tbTitulo.Size = New System.Drawing.Size(208, 23)
         Me.tbTitulo.TabIndex = 1
         '
         'lTitulo
@@ -162,7 +138,7 @@ Partial Class Ventana_NuevoLibro
         Me.tbAutor.Location = New System.Drawing.Point(92, 32)
         Me.tbAutor.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
         Me.tbAutor.Name = "tbAutor"
-        Me.tbAutor.Size = New System.Drawing.Size(136, 23)
+        Me.tbAutor.Size = New System.Drawing.Size(75, 23)
         Me.tbAutor.TabIndex = 2
         '
         'lAño
@@ -170,7 +146,7 @@ Partial Class Ventana_NuevoLibro
         Me.lAño.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.lAño.AutoSize = True
         Me.lAño.Font = New System.Drawing.Font("Miriam Libre", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lAño.Location = New System.Drawing.Point(274, 35)
+        Me.lAño.Location = New System.Drawing.Point(183, 35)
         Me.lAño.Margin = New System.Windows.Forms.Padding(10, 0, 3, 0)
         Me.lAño.Name = "lAño"
         Me.lAño.Size = New System.Drawing.Size(28, 16)
@@ -181,41 +157,72 @@ Partial Class Ventana_NuevoLibro
         '
         Me.tbAño.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.tbAño.Font = New System.Drawing.Font("Miriam Libre", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbAño.Location = New System.Drawing.Point(315, 32)
+        Me.tbAño.Location = New System.Drawing.Point(224, 32)
         Me.tbAño.Margin = New System.Windows.Forms.Padding(10, 3, 3, 3)
+        Me.tbAño.MaxLength = 4
         Me.tbAño.Name = "tbAño"
         Me.tbAño.Size = New System.Drawing.Size(37, 23)
         Me.tbAño.TabIndex = 3
-        Me.tbAño.Text = "1234"
         '
         'tbSinopsis
         '
         Me.tlpDatos.SetColumnSpan(Me.tbSinopsis, 4)
         Me.tbSinopsis.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbSinopsis.Font = New System.Drawing.Font("Miriam Libre", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbSinopsis.Location = New System.Drawing.Point(23, 90)
         Me.tbSinopsis.Name = "tbSinopsis"
-        Me.tbSinopsis.Size = New System.Drawing.Size(430, 297)
+        Me.tbSinopsis.Size = New System.Drawing.Size(277, 105)
         Me.tbSinopsis.TabIndex = 4
         Me.tbSinopsis.Text = ""
+        '
+        'bGuardar
+        '
+        Me.bGuardar.AutoSize = True
+        Me.bGuardar.BackColor = System.Drawing.Color.PowderBlue
+        Me.bGuardar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.bGuardar.Font = New System.Drawing.Font("Miriam Libre", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bGuardar.Location = New System.Drawing.Point(261, 222)
+        Me.bGuardar.Name = "bGuardar"
+        Me.bGuardar.Size = New System.Drawing.Size(75, 26)
+        Me.bGuardar.TabIndex = 1
+        Me.bGuardar.Text = "Guardar"
+        Me.bGuardar.UseVisualStyleBackColor = False
+        '
+        'bLimpiar
+        '
+        Me.bLimpiar.AutoSize = True
+        Me.bLimpiar.BackColor = System.Drawing.Color.PowderBlue
+        Me.bLimpiar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.bLimpiar.Font = New System.Drawing.Font("Miriam Libre", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bLimpiar.Location = New System.Drawing.Point(180, 222)
+        Me.bLimpiar.Name = "bLimpiar"
+        Me.bLimpiar.Size = New System.Drawing.Size(75, 26)
+        Me.bLimpiar.TabIndex = 2
+        Me.bLimpiar.Text = "Limpiar"
+        Me.bLimpiar.UseVisualStyleBackColor = False
         '
         'Ventana_NuevoLibro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Azure
-        Me.ClientSize = New System.Drawing.Size(502, 450)
+        Me.ClientSize = New System.Drawing.Size(349, 261)
         Me.Controls.Add(Me.tlpPrincipal)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Ventana_NuevoLibro"
         Me.Text = "Ventana_NuevoLibro"
         Me.tlpPrincipal.ResumeLayout(False)
+        Me.tlpPrincipal.PerformLayout()
         Me.tlpDatos.ResumeLayout(False)
         Me.tlpDatos.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents tlpPrincipal As TableLayoutPanel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents bGuardar As Button
+    Friend WithEvents bLimpiar As Button
     Friend WithEvents tlpDatos As TableLayoutPanel
     Friend WithEvents tbTitulo As TextBox
     Friend WithEvents lTitulo As Label

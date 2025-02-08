@@ -95,8 +95,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\GestionBiblioteca.vb" />
     <Compile Include="Modelo\Libro.vb" />
     <Compile Include="Modelo\Prestamo.vb" />
+    <Compile Include="Modelo\SQLLite.vb" />
     <Compile Include="Modelo\Usuario.vb" />
     <Compile Include="Vista\Form1.vb">
       <SubType>Form</SubType>
@@ -140,6 +142,18 @@
     <Compile Include="Vista\Ventana_NuevoLibro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\Ventana_Prestamos.Designer.vb">
+      <DependentUpon>Ventana_Prestamos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventana_Prestamos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Ventana_Usuarios.Designer.vb">
+      <DependentUpon>Ventana_Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Ventana_Usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Vista\Form1.resx">
@@ -160,6 +174,12 @@
     <EmbeddedResource Include="Vista\Ventana_NuevoLibro.resx">
       <DependentUpon>Ventana_NuevoLibro.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventana_Prestamos.resx">
+      <DependentUpon>Ventana_Prestamos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Ventana_Usuarios.resx">
+      <DependentUpon>Ventana_Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="BDBiblioteca.db">
@@ -178,13 +198,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ControlBiblioteca\ControlBiblioteca\ControlBiblioteca.vbproj">
-      <Project>{384150A0-DC30-476E-AEFD-CD15E7358ACA}</Project>
-      <Name>ControlBiblioteca</Name>
+    <ProjectReference Include="..\..\..\..\source\repos\ControlUsuario\ControlUsuario\ControlUsuario.vbproj">
+      <Project>{EF40B61C-B3C8-4174-9463-EC852A65A6A2}</Project>
+      <Name>ControlUsuario</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controlador\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
