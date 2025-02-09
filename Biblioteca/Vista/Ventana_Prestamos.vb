@@ -1,7 +1,7 @@
 ﻿Public Class Ventana_Prestamos
     Dim gestor As New GestionBiblioteca
-    Private fechaMin = System.DateTime.Today
-    Private fechaMax = DateAdd("d", 15, fechaMin)
+    Private fechaMin As DateTime = System.DateTime.Today
+    Private fechaMax As DateTime = DateAdd("d", 15, fechaMin)
 
     Private Sub Ventana_Prestamos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim usuarios = gestor.buscarUsuarios()
@@ -73,6 +73,7 @@
         lFecha.Visible = False
         dtpFecha.Visible = False
         lbLibros.Items.Clear()
+        lbUsuarios.ClearSelected()
     End Sub
 
     Private Sub cargarDisponibles()
@@ -92,6 +93,26 @@
             prestamos = gestor.buscarPrestamos(us.id)
             For Each p In prestamos
                 lbLibros.Items.Add(gestor.buscarLibroPorId(p.libro))
+            Next
+        End If
+    End Sub
+
+    Dim cargado = False
+    Const anchoMin = 480
+
+    Private Sub Ventana_Prestamos_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        cargado = True
+    End Sub
+
+    Private Sub Ventana_Prestamos_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If cargado Then
+            Dim tamañoFuente = (10 * Me.Size.Width) / anchoMin
+            Dim fuente As New Font("Miriam Libre", IIf(tamañoFuente < 10, 10, IIf(tamañoFuente > 20, 20, tamañoFuente)), FontStyle.Bold)
+            For Each control In tlpPrincipal.Controls
+                control.Font = fuente
+            Next
+            For Each control In tlpBotones.Controls
+                control.Font = fuente
             Next
         End If
     End Sub

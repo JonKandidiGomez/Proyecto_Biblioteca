@@ -40,7 +40,7 @@ Partial Class Ventana_Libros
         Me.tlpPrincipal.RowCount = 2
         Me.tlpPrincipal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlpPrincipal.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tlpPrincipal.Size = New System.Drawing.Size(494, 396)
+        Me.tlpPrincipal.Size = New System.Drawing.Size(296, 302)
         Me.tlpPrincipal.TabIndex = 0
         '
         'bNuevoLibro
@@ -49,11 +49,11 @@ Partial Class Ventana_Libros
         Me.bNuevoLibro.AutoSize = True
         Me.bNuevoLibro.BackColor = System.Drawing.Color.PowderBlue
         Me.bNuevoLibro.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.bNuevoLibro.Font = New System.Drawing.Font("Miriam Libre", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bNuevoLibro.Location = New System.Drawing.Point(398, 351)
+        Me.bNuevoLibro.Font = New System.Drawing.Font("Miriam Libre", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bNuevoLibro.Location = New System.Drawing.Point(186, 257)
         Me.bNuevoLibro.Margin = New System.Windows.Forms.Padding(10)
         Me.bNuevoLibro.Name = "bNuevoLibro"
-        Me.bNuevoLibro.Size = New System.Drawing.Size(86, 35)
+        Me.bNuevoLibro.Size = New System.Drawing.Size(100, 35)
         Me.bNuevoLibro.TabIndex = 0
         Me.bNuevoLibro.Text = "Nuevo libro"
         Me.bNuevoLibro.UseVisualStyleBackColor = False
@@ -67,7 +67,7 @@ Partial Class Ventana_Libros
         Me.flpLibros.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
         Me.flpLibros.Location = New System.Drawing.Point(3, 3)
         Me.flpLibros.Name = "flpLibros"
-        Me.flpLibros.Size = New System.Drawing.Size(488, 335)
+        Me.flpLibros.Size = New System.Drawing.Size(290, 241)
         Me.flpLibros.TabIndex = 1
         Me.flpLibros.WrapContents = False
         '
@@ -76,7 +76,7 @@ Partial Class Ventana_Libros
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Azure
-        Me.ClientSize = New System.Drawing.Size(494, 396)
+        Me.ClientSize = New System.Drawing.Size(296, 302)
         Me.Controls.Add(Me.tlpPrincipal)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)

@@ -106,6 +106,8 @@ Public Class GestionBiblioteca
         Cmd.CommandText = sql
         Cmd.Parameters.Add("@Id", DbType.Int16).Value = id
         SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+
+        borrarPrestamosPorLibro(id)
     End Sub
 
     Public Function buscarUsuarios()
@@ -175,6 +177,8 @@ Public Class GestionBiblioteca
         Cmd.CommandText = sql
         Cmd.Parameters.Add("@Id", DbType.Int16).Value = id
         SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+
+        borrarPrestamosPorUsuario(id)
     End Sub
 
     Public Function buscarPrestamos(idUsuario As Integer)
@@ -222,6 +226,30 @@ Public Class GestionBiblioteca
         actualizarDisponible(idLibro, 1)
     End Sub
 
+    Public Sub borrarPrestamosPorLibro(idLibro As Integer)
+        Dim Cmd As New SQLiteCommand
+        Dim sql As String = "DELETE FROM PRESTAMOS WHERE ID_LIBRO=@IdLibro"
+        Cmd.CommandText = sql
+        Cmd.Parameters.Add("@IdLibro", DbType.Int16).Value = idLibro
+        SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+    End Sub
+
+    Public Sub borrarPrestamosPorUsuario(idUsuario As Integer)
+        Dim prestamos As New List(Of Prestamo)
+        prestamos = buscarPrestamos(idUsuario)
+
+        Dim Cmd As New SQLiteCommand
+        Dim sql As String = "DELETE FROM PRESTAMOS WHERE ID_USUARIO=@IdUsuario"
+        Cmd.CommandText = sql
+        Cmd.Parameters.Add("@IdUsuario", DbType.Int16).Value = idUsuario
+        SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+
+        For Each p In prestamos
+            actualizarDisponible(p.libro, 1)
+        Next
+
+    End Sub
+
     Private Sub actualizarDisponible(idLibro As Integer, disponible As Integer)
         Dim Cmd As New SQLiteCommand
         Dim sql As String = "UPDATE LIBROS SET DISPONIBLE=@Disponible WHERE ID=@Id"
@@ -237,8 +265,11 @@ Public Class GestionBiblioteca
         cmd.CommandText = sql
         Dim lector = SQLLite.GetDataReader(My.Settings.conexion, cmd)
         Dim id As Integer = 0
+
         While lector.Read()
-            id = lector.GetInt16(0)
+            If Not lector.IsDBNull(0) Then ' Verificamos si el valor no es NULL
+                id = lector.GetInt16(0)
+            End If
         End While
 
         Return id + 1

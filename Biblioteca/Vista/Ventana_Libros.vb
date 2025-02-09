@@ -3,8 +3,10 @@ Imports ControlUsuario
 Public Class Ventana_Libros
     Dim gestor As New GestionBiblioteca
     Dim cargado = False
+    Dim anchoMin As Double
     Private Sub Ventana_Libros_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarLibros()
+        anchoMin = Me.Size.Width
     End Sub
 
     Private Sub cargarLibros()
@@ -79,6 +81,9 @@ Public Class Ventana_Libros
             For Each control In flpLibros.Controls
                 control.Width = flpLibros.Width - 8
             Next
+            Dim tamañoFuente = (10 * Me.Size.Width) / anchoMin
+            Dim fuente As New Font("Miriam Libre", IIf(tamañoFuente < 10, 10, IIf(tamañoFuente > 20, 20, tamañoFuente)), FontStyle.Bold)
+            bNuevoLibro.Font = fuente
         End If
     End Sub
 End Class

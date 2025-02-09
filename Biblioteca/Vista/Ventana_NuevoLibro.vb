@@ -102,4 +102,22 @@
         tbAño.Clear()
         tbSinopsis.Clear()
     End Sub
+
+    Dim cargado = False
+    Const anchoMin = 480
+    Private Sub Ventana_NuevoLibro_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        cargado = True
+    End Sub
+
+    Private Sub Ventana_NuevoLibro_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If cargado Then
+            Dim tamañoFuente = (10 * Me.Size.Width) / anchoMin
+            Dim fuente As New Font("Miriam Libre", IIf(tamañoFuente < 10, 10, IIf(tamañoFuente > 20, 20, tamañoFuente)), FontStyle.Bold)
+            For Each control In tlpDatos.Controls
+                control.Font = fuente
+            Next
+            bGuardar.Font = fuente
+            bLimpiar.Font = fuente
+        End If
+    End Sub
 End Class

@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports System.Data.Entity.Core.Common
+
+Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarBiblioteca()
@@ -50,5 +52,22 @@
             cargarPrestamos()
         End If
 
+    End Sub
+
+    Dim cargado = False
+    Const fuenteMin = 12
+    Const fuenteMax = 24
+    Const anchoMin = 500
+
+    Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        cargado = True
+    End Sub
+
+    Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If cargado Then
+            Dim tamañoFuente = (fuenteMin * Me.Size.Width) / anchoMin
+            Dim fuente As New Font("Miriam Libre", IIf(tamañoFuente < fuenteMin, fuenteMin, IIf(tamañoFuente > fuenteMax, fuenteMax, tamañoFuente)), FontStyle.Bold)
+            msBarraNav.Font = fuente
+        End If
     End Sub
 End Class

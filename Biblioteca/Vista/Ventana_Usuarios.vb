@@ -101,4 +101,27 @@
         tbSegundoApellido.Clear()
         tbTelefono.Clear()
     End Sub
+
+    Dim cargado = False
+    Dim anchoMin = 480
+
+    Private Sub Ventana_Usuarios_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        cargado = True
+    End Sub
+
+
+    Private Sub Ventana_Usuarios_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If cargado Then
+            Dim tamañoFuente = (10 * Me.Size.Width) / anchoMin
+            Dim fuente As New Font("Miriam Libre", IIf(tamañoFuente < 10, 10, IIf(tamañoFuente > 20, 20, tamañoFuente)), FontStyle.Bold)
+            For Each control In tlpDatos.Controls
+                control.Font = fuente
+            Next
+            For Each control In tlpPrincipal.Controls
+                control.Font = fuente
+            Next
+            tamañoFuente = (12 * Me.Size.Width) / anchoMin
+            lbUsuarios.Font = New Font("Miriam Libre", IIf(tamañoFuente < 12, 12, IIf(tamañoFuente > 24, 24, tamañoFuente)), FontStyle.Bold)
+        End If
+    End Sub
 End Class
